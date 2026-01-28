@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Raven Secure Portal | بوابة الدخول الآمنة</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">
+            <h1>بوابة الوصول الموحدة</h1>
+            <p>نظام محمي ضد هجمات حجب الخدمة (DoS)</p>
+        </div>
+        <div class="login-card">
+            <input type="text" id="user" placeholder="اسم المستخدم">
+            <input type="password" id="pass" placeholder="كلمة المرور">
+            <button onclick="checkAccess()">تسجيل الدخول</button>
+            <div id="status"></div>
+        </div>
+        <footer class="footer-note">تم التطوير بواسطة متجر ريڤن للخدمات الإلكترونية</footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
