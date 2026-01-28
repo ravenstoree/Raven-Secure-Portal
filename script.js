@@ -1,13 +1,24 @@
 let requestCount = 0;
+
 function checkAccess() {
     requestCount++;
     const status = document.getElementById('status');
-    
-    if(requestCount > 5) { // محاكاة لزيادة الطلبات (هجوم)
-        status.innerHTML = "⚠️ تحذير: تم اكتشاف ضغط عالي! تفعيل بروتوكول الحماية..";
-        status.style.color = "red";
+    const user = document.getElementById('user').value;
+    const pass = document.getElementById('pass').value;
+
+    // محاكاة نظام الدفاع ضد الضغط العالي
+    if(requestCount > 5) {
+        status.innerHTML = "⚠️ تنبيه أمني: تم رصد ضغط غير طبيعي على السيرفر!";
+        status.style.color = "#ff4c4c";
+        return;
+    }
+
+    // التحقق من البيانات (مثال)
+    if(user === "admin" && pass === "123456") {
+        status.innerHTML = "✅ تم تسجيل الدخول بنجاح.";
+        status.style.color = "#00ff88";
     } else {
-        status.innerHTML = "جاري التحقق من الهوية...";
+        status.innerHTML = "بيانات الدخول غير صحيحة. المحاولة: " + requestCount;
         status.style.color = "#00d4ff";
     }
 }
