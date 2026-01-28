@@ -2,22 +2,23 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>بوابة الدخول الآمنة | Secure Access Portal</title>
+    <title>نظام إدارة الوصول الآمن | Secure Access Portal</title>
 </head>
 <body>
     <div class="login-container">
         <div class="header">
             <h1>نظام إدارة الوصول الموحد</h1>
-            <p>نظام محمي لصد هجمات حجب الخدمة (DoS)</p>
+            <p>مشروع تحليل هجمات حجب الخدمة (DoS)</p>
         </div>
         <div class="login-card">
-            <input type="text" id="user" placeholder="اسم المستخدم">
+            <div id="status-box" class="status-neutral">حالة النظام: مستقر ✅</div>
+            <input type="text" id="user" placeholder="اسم المستخدم" autocomplete="off">
             <input type="password" id="pass" placeholder="كلمة المرور">
-            <button onclick="checkAccess()">تسجيل الدخول</button>
-            <div id="status"></div>
+            <button onclick="handleLogin()">تسجيل الدخول</button>
         </div>
-        <footer class="footer-note">نظام محمي برمجياً - 2026</footer>
+        <footer class="footer-note">نظام المراقبة الأمنية - 2026</footer>
     </div>
     <script src="script.js"></script>
 </body>

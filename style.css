@@ -1,4 +1,3 @@
-/* تنسيقات واجهة الوصول الأمنية */
 body {
     background-color: #0b0e14;
     color: #00d4ff;
@@ -12,35 +11,53 @@ body {
 
 .login-card {
     background: #161b22;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 30px 40px;
+    border-radius: 12px;
     border: 1px solid #30363d;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.15);
     text-align: center;
+    width: 350px;
 }
+
+#status-box {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.status-neutral { background: #0d1117; color: #8b949e; }
+.status-success { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid #00ff88; }
+.status-attack { background: rgba(255, 76, 76, 0.1); color: #ff4c4c; border: 1px solid #ff4c4c; animation: shake 0.2s ease-in-out; }
 
 input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
+    margin: 8px 0;
     background: #0d1117;
     border: 1px solid #30363d;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
+    box-sizing: border-box;
     outline: none;
 }
 
 button {
+    width: 100%;
     background-color: #00d4ff;
     color: #0b0e14;
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #008fb3;
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }

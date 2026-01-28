@@ -1,24 +1,24 @@
 let requestCount = 0;
 
-function checkAccess() {
+function handleLogin() {
     requestCount++;
-    const status = document.getElementById('status');
+    const statusBox = document.getElementById('status-box');
     const user = document.getElementById('user').value;
     const pass = document.getElementById('pass').value;
 
-    // محاكاة نظام الدفاع ضد الضغط العالي
-    if(requestCount > 5) {
-        status.innerHTML = "⚠️ تنبيه أمني: تم رصد ضغط غير طبيعي على السيرفر!";
-        status.style.color = "#ff4c4c";
+    // 1. اكتشاف الهجوم (الضغط المتكرر) - تفعيل Rate Limiting
+    if (requestCount > 5) {
+        statusBox.innerHTML = "⚠️ تحذير: تم رصد هجوم DoS! حظر الطلبات مفعل.";
+        statusBox.className = "status-attack";
         return;
     }
 
-    // التحقق من البيانات (مثال)
-    if(user === "admin" && pass === "123456") {
-        status.innerHTML = "✅ تم تسجيل الدخول بنجاح.";
-        status.style.color = "#00ff88";
+    // 2. التحقق الفوري من البيانات
+    if (user === "admin" && pass === "123456") {
+        statusBox.innerHTML = "✅ تم التحقق بنجاح. أهلاً بك.";
+        statusBox.className = "status-success";
     } else {
-        status.innerHTML = "بيانات الدخول غير صحيحة. المحاولة: " + requestCount;
-        status.style.color = "#00d4ff";
+        statusBox.innerHTML = "❌ خطأ في البيانات. محاولة: " + requestCount;
+        statusBox.className = "status-attack";
     }
 }
